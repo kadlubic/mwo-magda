@@ -48,7 +48,7 @@ public class InvoiceTest {
     public void testInvoiceSubtotalWithManySameProducts() {
         Product onions = new TaxFreeProduct("Warzywa", BigDecimal.valueOf(10));
         invoice.addProduct(onions, 100);
-        Assert.assertThat(new BigDecimal("1000"), Matchers.comparesEqualTo(invoice.getNetPrice()));
+        Assert.assertThat(invoice.getNetPrice(), Matchers.comparesEqualTo(new BigDecimal("1000")));
     }
 
     @Test
